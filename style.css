@@ -218,3 +218,32 @@ nav a.btn-daftar:hover {
   color: #fff;
   text-decoration: none;
 }
+.galeri-card img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.galeri-card img:hover {
+  transform: scale(1.05);
+}
+.paket-scroll-container {
+  display: flex;
+  overflow-x: auto; /* Scroll horizontal */
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.paket-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 260px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #1A5D1A;
+}
