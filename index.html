@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PT Syakirasya - Travel Haji & Umrah</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Floating Testimoni & WhatsApp CTA -->
+<div class="floating-testimoni" id="floatingTestimoni">
+  <p id="testimoniText">“Pelayanan terbaik selama Umrah. Terima kasih Syakirasya!”</p>
+</div>
+<a href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20ingin%20bertanya%20tentang%20Umrah%20atau%20Haji." class="whatsapp-float-left" target="_blank">💬 Hubungi Kami</a>
+<a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank">💬</a>
+<a href="#booking" class="mobile-booking-cta">📥 Booking Umrah</a>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1A5D1A;">
+  <div class="container">
+    <a class="navbar-brand" href="#">Syakirasya</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav ms-auto">
+  <li class="nav-item"><a class="nav-link text-white" href="#beranda">Beranda</a></li>
+  <li class="nav-item"><a class="nav-link text-white" href="#tentang">Tentang</a></li>
+  <li class="nav-item"><a class="nav-link text-white" href="#paket">Paket</a></li>
+  <li class="nav-item"><a class="nav-link text-white" href="#galeri">Galeri</a></li>
+  <li class="nav-item"><a class="nav-link text-white" href="#kontak">Kontak</a></li>
+  <li class="nav-item"><a class="nav-link text-white" href="#lokasi">Lokasi</a></li>
+  <li class="nav-item">
+    <a class="btn btn-light btn-sm ms-3" href="login.html">🔐 Login</a>
+  </li>
+</ul>
+  </li>
+</ul>
+
+</nav>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Hero Section -->
+<section id="beranda" class="text-white text-center d-flex align-items-center justify-content-center" style="height: 100vh; background-color: #1A5D1A;">
+  <div class="container">
+    <h1 class="display-4" data-aos="fade-down">Selamat Datang di PT Syakirasya</h1>
+    <p class="lead" data-aos="fade-up">Perjalanan Haji dan Umrah dengan pelayanan terbaik & terpercaya</p>
+    <a href="#booking" class="btn btn-success btn-lg rounded-pill mt-3" data-aos="zoom-in">🛫 Booking Sekarang</a>
+  </div>
+</section>
+<!-- Tentang Section -->
+ <section id="tentang" class="section">
+  <h2>Tentang Kami</h2>
+  <p><strong>PT Syakirasya</strong> adalah perusahaan resmi yang bergerak di bidang jasa perjalanan Umrah dan Haji...</p>
+
+  <h3>Kantor Pusat</h3>
+  <p>Jl. Raya Mauk KM 12, Desa Kosambi, Sukadiri, Kabupaten Tangerang</p>
+
+  <h3>Kontak</h3>
+  <ul>
+    <li>WhatsApp: <a href="https://wa.me/6281234567890">0812-3456-7890</a></li>
+    <li>Email: syakirasya.travel@gmail.com</li>
+    <li>Instagram: @syakirasyagroup</li>
+    <li>Facebook: Syakirasya Umroh</li>
+  </ul>
+</section>
+<!-- Paket Section -->
+<section id="paket" class="section">
+  <h2>Paket Haji & Umrah</h2>
+  <div class="paket-scroll-container">
+    <!-- Paket 1 -->
+    <div class="paket-card">
+      <img src="img/umrah1.jpg" alt="Umrah Reguler" />
+      <h3>Umrah Reguler 9 Hari</h3>
+      <p>Rp 28.000.000</p>
+      <a href="paket-umrah-reguler.html" class="btn-detail">Detail</a>
+    </div>
+
+    <!-- Paket 2 -->
+    <div class="paket-card">
+      <img src="img/umrah2.jpg" alt="Umrah Turki" />
+      <h3>Umrah Plus Turki 12 Hari</h3>
+      <p>Rp 35.000.000</p>
+      <a href="paket-umrah-turki.html" class="btn-detail">Detail</a>
+    </div>
+
+    <!-- Paket 3 -->
+    <div class="paket-card">
+      <img src="img/umrah3.jpg" alt="Haji Khusus" />
+      <h3>Haji Khusus ONH Plus</h3>
+      <p>Kuota Terbatas</p>
+      <a href="paket-haji-khusus.html" class="btn-detail">Detail</a>
+    </div>
+
+    <!-- Paket 4 -->
+    <div class="paket-card">
+      <img src="img/umrah4.jpg" alt="Umrah Ramadhan" />
+      <h3>Umrah Ramadhan 10 Hari</h3>
+      <p>Rp 32.000.000</p>
+      <a href="paket-umrah-ramadhan.html" class="btn-detail">Detail</a>
+    </div>
+  </div>
+</section>
+  </div>
+</section><div class="modal" id="modalPaket">
+  <div class="modal-content">
+    <span class="close" onclick="tutupModal()">&times;</span>
+    <h3 id="modalPaketNama"></h3>
+    <p>Silakan klik tombol di bawah untuk melanjutkan proses booking paket ini.</p>
+    <a href="#booking" onclick="isiBookingPaket()" class="btn-daftar">📥 Booking Sekarang</a>
+  </div>
+</div>
+<!-- Galeri Section -->
+<section class="section bg-light" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="text-success mb-4">Galeri Perjalanan</h2>
+    <div class="galeri-mini justify-content-center">
+      <img src="img/umrah5.jpg" alt="Suasana Mina">
+      <img src="img/umrah6.jpg" alt="Bimbingan Manasik">
+      <img src="img/umrah7.jpg" alt="Jamaah di Arafah">
+      <img src="img/umrah8.jpg" alt="Hotel Dekat Haram">
+    </div>
+  </div>
+</section>
+<!-- Booking Section -->
+<section id="booking" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Form Booking Online</h2>
+    <form id="bookingForm" class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Nama Lengkap</label>
+        <input type="text" name="nama" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">No. HP / WA</label>
+        <input type="text" name="hp" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Pilih Paket</label>
+        <input type="text" name="paket" id="paketDipilih" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Catatan Tambahan</label>
+        <input type="text" name="catatan" class="form-control">
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-success">Kirim Booking</button>
+
+        <p id="bookingStatus" class="mt-3"></p>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- kontak -->
+<section id="kontak" class="section text-center">
+  <div class="container">
+    <h2>Kontak Kami</h2>
+    <p><strong>Alamat:</strong> Jl. Contoh No.123, Jakarta</p>
+    <p><strong>Telepon:</strong> 0812-3456-7890</p>
+    <p><strong>Email:</strong> info@syakirasya.co.id</p>
+    <div class="map-container mt-4">
+      <iframe 
+        src="https://www.google.com/maps?q=Jl.%20Raya%20Mauk%20KM%2012%20Kosambi%20Sukadiri%20Tangerang&output=embed"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+<footer class="bg-success text-white text-center py-3">
+  <div class="container">
+    <p>&copy; 2025 PT Syakirasya. All rights reserved.</p>
+    <div>
+      <a href="https://instagram.com/syakirasyagroup" target="_blank" class="text-white me-3">Instagram</a>
+      <a href="https://facebook.com/SyakirasyaUmroh" target="_blank" class="text-white">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+<script src="script.js"></script>
+</body>
+</html>  

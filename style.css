@@ -1,0 +1,220 @@
+/* Custom Styles for PT Syakirasya Bootstrap Version */
+.floating-testimoni {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background: #fff;
+  color: #c51212;
+  border-left: 5px solid #25d366;
+  padding: 15px 20px;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 195, 255, 0.2);
+  font-style: italic;
+  font-size: 0.95rem;
+  z-index: 9999;
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.whatsapp-float-left, .whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: background 0.3s ease;
+}
+.whatsapp-float-left { left: 20px; background: #25d366; }
+.whatsapp-float-left:hover { background: #1ebe5b; }
+.whatsapp-float { right: 20px; background: #25d366; }
+.whatsapp-float:hover { background: #1ebe5b; }
+
+/* Tentang Kami Section */
+/* Tentang Kami Section */
+#tentang.section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  color: #333;
+  text-align: center;
+}
+
+#tentang h2 {
+  font-size: 2.5rem;
+  color: #1A5D1A;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+#tentang h3 {
+  font-size: 1.4rem;
+  color: #1A5D1A;
+  margin-top: 30px;
+}
+
+#tentang p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tentang ul {
+  list-style: none;
+  padding-left: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#tentang ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+#tentang ul li a {
+  color: #1A5D1A;
+  text-decoration: none;
+}
+
+#tentang ul li a:hover {
+  text-decoration: underline;
+}
+.mobile-booking-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #25d366;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 9999;
+}
+@media (max-width: 768px) {
+  .mobile-booking-cta {
+    display: block;
+  }
+}
+
+#bookingStatus { font-weight: bold; }
+.logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.logo-row img {
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+/* Untuk scroll horizontal pada bagian paket */
+.paket-scroll-container {
+  display: flex;
+  justify-content: center; /* Tengah */
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 20px 0;
+}
+
+.paket-card {
+  flex: 0 0 auto;
+  width: 260px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #1A5D1A;
+}
+
+.paket-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.paket-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.paket-card h5 {
+  color: #1A5D1A;
+  margin-top: 10px;
+}
+
+.btn-detail {
+  background-color: #1A5D1A;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 12px;
+}
+.btn-detail {
+  background-color: #1A5D1A;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+.galeri-mini img {
+  width: 250px;
+  max-height: 160px; /* ❗️Batasi tinggi */
+  height: auto;
+  border-radius: 12px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  object-fit: cover; /* ❗️Jaga agar gambar tetap proporsional */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+nav a.btn-daftar {
+  background: #25d366;
+  color: white !important;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .section {
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+}
+
+.paket-card h3,
+.paket-card p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-detail:hover,
+nav a.btn-daftar:hover {
+  background: #198754; /* hijau lebih tua dari bootstrap */
+  color: #fff;
+  text-decoration: none;
+}

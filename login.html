@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <img src="img/logo.png" alt="Logo Syakirasya" width="100" style="margin-bottom:20px;">
+  <title>Login - PT Syakirasya</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .section { max-width: 400px; margin: 80px auto; text-align: center; }
+    input, select, button { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc; }
+    button { background: #25d366; color: white; font-weight: bold; border: none; }
+    button:hover { background: #1ebe5b; }
+  </style>
+  <!-- Google Sign-In -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <div style="text-align:center; margin-top: 10px;">
+</div>
+</head>
+<body>
+  <section class="section">
+    <h2>Login PT Syakirasya</h2>
+
+    <!-- Form Login Manual -->
+    <form onsubmit="return loginUser()">
+      <select id="role" required>
+        <option value="">-- Pilih Peran --</option>
+        <option value="admin">Admin</option>
+        <option value="jamaah">Jamaah</option>
+      </select>
+      <input type="text" id="username" placeholder="Email / Username" required />
+      <input type="password" id="password" placeholder="Password / Kode Booking" required />
+      <button type="submit">Masuk</button>
+    </form>
+
+    <hr>
+    <p>Atau login dengan akun Google:</p>
+    <p id="notifLogin" style="color:red; font-weight:bold;"></p>
+     <a href="index.html" class="btn btn-outline-success mt-3">← Kembali ke Beranda</a>
+    <!-- Google Sign-In Button -->
+    <div id="g_id_onload"
+        data-client_id="ISI_CLIENT_ID_KAMU"
+        data-context="signin"
+        data-ux_mode="redirect"
+        data-login_uri="jamaah/portal.html"
+        data-auto_prompt="false">
+    </div>
+
+    <div class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="outline"
+        data-text="signin_with"
+        data-shape="rectangular"
+        data-logo_alignment="left">
+    </div>
+    
+  </section>
+
+  <script>
+    function loginUser() {
+      const role = document.getElementById("role").value;
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if (role === "admin") {
+        if (user === "admin" && pass === "1234") {
+          window.location.href = "admin/dashboard.html";
+        } else {
+          alert("Admin login gagal.");
+        }
+      } else if (role === "jamaah") {
+        if (user === "jamaah@example.com" && pass === "ABC123") {
+          window.location.href = "jamaah/portal.html";
+        } else {
+          alert("Login Jamaah gagal.");
+        }
+      } else {
+        alert("Pilih peran terlebih dahulu.");
+      }
+
+      return false;
+    }
+  </script>
+</body>
+</html>
