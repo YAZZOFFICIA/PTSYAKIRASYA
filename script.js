@@ -1,13 +1,17 @@
-// Smooth scroll for nav links
+// Smooth scroll only for internal links (starts with "#")
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+    const href = link.getAttribute('href');
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   });
 });
+
 
 window.addEventListener('DOMContentLoaded', () => {
   const paketDipilih = localStorage.getItem('paketDipilih');
