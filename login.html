@@ -54,26 +54,29 @@
       </div>
     </div>
   </div>
+<script>
+  function loginUser() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-  <script>
-    function login(event) {
-      event.preventDefault();
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      // Dummy akun
-      const akun = {
-        email: "baraganteng@gmail.com",
-        password: "123456"
-      };
-
-      if (email === akun.email && password === akun.password) {
-        localStorage.setItem("login", "true");
-        window.location.href = "admin/dashboard.html";
-      } else {
-        alert("Email atau password salah!");
-      }
+    // Simulasi akun admin
+    if (email === "baraganteng@gmail.com" && password === "123456") {
+      localStorage.setItem("login", "true");
+      localStorage.setItem("role", "admin");
+      window.location.href = "admin/dashboard.html";
+      return;
     }
-  </script>
-</body>
-</html>
+
+    // Simulasi akun jamaah
+    if (email === "mukhlis@gmail.com" && password === "123456") {
+      localStorage.setItem("login", "true");
+      localStorage.setItem("nama", "Ahmad Fauzi");
+      localStorage.setItem("role", "jamaah");
+      window.location.href = "dashboard.html";
+      return;
+    }
+
+    // Jika tidak cocok dua-duanya
+    alert("Email atau password salah!");
+  }
+</script>
