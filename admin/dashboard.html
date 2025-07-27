@@ -13,7 +13,7 @@
     }
     .sidebar {
       height: 100vh;
-      background-color: #1A5D1A;
+      background-color: #02ffb3;
       padding: 1rem;
       position: sticky;
       top: 0;
@@ -27,12 +27,10 @@
       border-radius: 6px;
       transition: background-color 0.3s;
     }
-    .sidebar a:hover {
-      background-color: #145214;
-    }
+    .sidebar a:hover,
     .sidebar a.active {
+      background-color:#02ffb3;;
       font-weight: bold;
-      background-color: #145214;
     }
     .topbar {
       background-color: white;
@@ -57,6 +55,9 @@
         <a href="#dashboard" class="nav-link active" data-bs-toggle="tab">🏠 Dashboard</a>
         <a href="#paket" class="nav-link" data-bs-toggle="tab">📦 Data Paket</a>
         <a href="#pembayaran" class="nav-link" data-bs-toggle="tab">💳 Pembayaran</a>
+        <a href="#jamaah" class="nav-link" data-bs-toggle="tab">🧑‍🤝‍🧑 Data Jamaah</a>
+        <a href="#transaksi" class="nav-link" data-bs-toggle="tab">📄 Riwayat Transaksi</a>
+        <a href="#laporan" class="nav-link" data-bs-toggle="tab">📊 Laporan</a>
         <a href="#logout" class="nav-link text-danger mt-auto" onclick="logout()">🚪 Logout</a>
       </nav>
 
@@ -70,13 +71,17 @@
         <div class="tab-content px-2">
           <!-- Dashboard -->
           <div class="tab-pane fade show active" id="dashboard">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>⚠️ Notifikasi:</strong> Ada 1 pembayaran baru yang menunggu konfirmasi!
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
             <h5>📊 Statistik Singkat</h5>
             <div class="row g-3">
               <div class="col-md-4">
                 <div class="card shadow-sm">
                   <div class="card-body">
                     <h6>Total Paket</h6>
-                    <p class="fs-4 fw-semibold text-success">5</p>
+                    <p class="fs-4 fw-semibold text-success">4</p>
                   </div>
                 </div>
               </div>
@@ -111,12 +116,6 @@
                     <td>20 Agustus 2025</td>
                     <td><button class="btn btn-warning btn-sm">Edit</button></td>
                   </tr>
-                  <tr>
-                    <td>Umrah Plus Turki</td>
-                    <td>Rp 38.000.000</td>
-                    <td>15 September 2025</td>
-                    <td><button class="btn btn-warning btn-sm">Edit</button></td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -138,22 +137,74 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Ahmad Fauzi</td>
+                    <td>BARAGANTENGLUWCU</td>
                     <td>08123456789</td>
                     <td>Umrah Reguler</td>
                     <td><a href="#" class="btn btn-link btn-sm">Lihat Bukti</a></td>
                     <td><span class="badge bg-warning text-dark">Menunggu</span></td>
                   </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Data Jamaah -->
+          <div class="tab-pane fade" id="jamaah">
+            <h5 class="mt-3">🧑‍🤝‍🧑 Data Jamaah</h5>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle">
+                <thead class="table-success">
                   <tr>
-                    <td>Siti Aminah</td>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>No. HP</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Mukhlis</td>
+                    <td>mukhlis@mail.com</td>
                     <td>08987654321</td>
-                    <td>Umrah Plus Turki</td>
-                    <td><a href="#" class="btn btn-link btn-sm">Lihat Bukti</a></td>
-                    <td><span class="badge bg-success">Dikonfirmasi</span></td>
+                    <td><span class="badge bg-success">Aktif</span></td>
                   </tr>
                 </tbody>
               </table>
             </div>
+          </div>
+
+          <!-- Riwayat Transaksi -->
+          <div class="tab-pane fade" id="transaksi">
+            <h5 class="mt-3">📄 Riwayat Transaksi</h5>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead class="table-success">
+                  <tr>
+                    <th>Tanggal</th>
+                    <th>Nama Jamaah</th>
+                    <th>Paket</th>
+                    <th>Jumlah</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>20/07/2025</td>
+                    <td>BARAGANTENGLUWCU</td>
+                    <td>Umrah Reguler</td>
+                    <td>Rp 28.000.000</td>
+                    <td><span class="badge bg-success">Lunas</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Laporan -->
+          <div class="tab-pane fade" id="laporan">
+            <h5 class="mt-3">📊 Export Laporan</h5>
+            <button class="btn btn-outline-success me-2">📥 Export Excel</button>
+            <button class="btn btn-outline-danger">📄 Export PDF</button>
           </div>
         </div>
       </main>
