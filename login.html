@@ -13,6 +13,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      font-family: 'Poppins', sans-serif;
     }
     .card {
       border: none;
@@ -34,7 +35,7 @@
             <h5 class="mt-2">Login Jamaah</h5>
             <p class="text-muted small">Silakan masuk untuk melihat data keberangkatan Anda.</p>
           </div>
-          <form onsubmit="return login(event)">
+          <form onsubmit="return loginUser(event);">
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="email" placeholder="Email atau Username" required />
               <label for="email"><i class="bi bi-person-circle me-2"></i>Email / Username</label>
@@ -54,29 +55,32 @@
       </div>
     </div>
   </div>
-<script>
-  function loginUser() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
 
-    // Simulasi akun admin
-    if (email === "baraganteng@gmail.com" && password === "123456") {
-      localStorage.setItem("login", "true");
-      localStorage.setItem("role", "admin");
-      window.location.href = "admin/dashboard.html";
-      return;
+  <script>
+    function loginUser(event) {
+      event.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      // Simulasi akun admin
+      if (email === "baraganteng@gmail.com" && password === "123456") {
+        localStorage.setItem("login", "true");
+        localStorage.setItem("role", "admin");
+        window.location.href = "admin/dashboard.html";
+        return;
+      }
+
+      // Simulasi akun jamaah
+      if (email === "mukhlis@gmail.com" && password === "123456") {
+        localStorage.setItem("login", "true");
+        localStorage.setItem("nama", "Ahmad Fauzi");
+        localStorage.setItem("role", "jamaah");
+        window.location.href = "jamaah/portal.html";
+        return;
+      }
+
+      alert("Email atau password salah!");
     }
-
-    // Simulasi akun jamaah
-    if (email === "mukhlis@gmail.com" && password === "123456") {
-      localStorage.setItem("login", "true");
-      localStorage.setItem("nama", "Ahmad Fauzi");
-      localStorage.setItem("role", "jamaah");
-      window.location.href = "dashboard.html";
-      return;
-    }
-
-    // Jika tidak cocok dua-duanya
-    alert("Email atau password salah!");
-  }
-</script>
+  </script>
+</body>
+</html>

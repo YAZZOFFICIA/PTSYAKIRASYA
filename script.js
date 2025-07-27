@@ -61,3 +61,25 @@ document.getElementById("loginBtn").textContent = "Memproses...";
 setTimeout(() => {
   document.getElementById("loginBtn").textContent = "Masuk";
 }, 2000);
+function loginUser(event) {
+  event.preventDefault();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  if (email === "baraganteng@gmail.com" && password === "123456") {
+    localStorage.setItem("login", "true");
+    localStorage.setItem("role", "admin");
+    window.location.href = "admin/dashboard.html";
+    return;
+  }
+
+  if (email === "mukhlis@gmail.com" && password === "123456") {
+    localStorage.setItem("login", "true");
+    localStorage.setItem("nama", "Ahmad Fauzi");
+    localStorage.setItem("role", "jamaah");
+    window.location.href = "dashboard.html";
+    return;
+  }
+
+  alert("Email atau password salah!");
+}
