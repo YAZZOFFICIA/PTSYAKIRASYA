@@ -1,4 +1,30 @@
-/* Custom Styles for PT Syakirasya Bootstrap Version */
+/* ================== GLOBAL STYLE ================== */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ================== NAVBAR ================== */
+.navbar, .navbar-brand, .nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+nav a.btn-daftar {
+  background: #25d366;
+  color: white !important;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+nav a.btn-daftar:hover {
+  background: #198754;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ================== FLOATING & CTA ================== */
 .floating-testimoni {
   position: fixed;
   bottom: 100px;
@@ -21,7 +47,8 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
-.whatsapp-float-left, .whatsapp-float {
+.whatsapp-float-left,
+.whatsapp-float {
   position: fixed;
   bottom: 20px;
   padding: 12px 20px;
@@ -32,13 +59,47 @@
   z-index: 9999;
   transition: background 0.3s ease;
 }
-.whatsapp-float-left { left: 20px; background: #25d366; }
-.whatsapp-float-left:hover { background: #1ebe5b; }
-.whatsapp-float { right: 20px; background: #25d366; }
-.whatsapp-float:hover { background: #1ebe5b; }
 
-/* Tentang Kami Section */
-/* Tentang Kami Section */
+.whatsapp-float-left {
+  left: 20px;
+  background: #25d366;
+}
+
+.whatsapp-float-left:hover {
+  background: #1ebe5b;
+}
+
+.whatsapp-float {
+  right: 20px;
+  background: #25d366;
+}
+
+.whatsapp-float:hover {
+  background: #1ebe5b;
+}
+
+.mobile-booking-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #25d366;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  .mobile-booking-cta {
+    display: block;
+  }
+}
+
+/* ================== TENTANG KAMI ================== */
 #tentang.section {
   background-color: #f9f9f9;
   padding: 60px 20px;
@@ -88,52 +149,33 @@
 #tentang ul li a:hover {
   text-decoration: underline;
 }
-.mobile-booking-cta {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #25d366;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  font-size: 1rem;
-  font-weight: bold;
-  z-index: 9999;
-}
-@media (max-width: 768px) {
-  .mobile-booking-cta {
-    display: block;
-  }
-}
 
-#bookingStatus { font-weight: bold; }
-.logo-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px 0;
-}
-
-.logo-row img {
-  max-height: 80px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-/* Untuk scroll horizontal pada bagian paket */
+/* ================== PAKET ================== */
 .paket-scroll-container {
   display: flex;
-  justify-content: center; /* Tengah */
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 1.5rem;
-  padding: 20px 0;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.paket-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.paket-scroll-container::-webkit-scrollbar-thumb {
+  background: #1A5D1A;
+  border-radius: 10px;
+}
+
+.paket-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
 .paket-card {
+  scroll-snap-align: start;
   flex: 0 0 auto;
   width: 260px;
   background-color: #ffffff;
@@ -156,7 +198,12 @@
   border-radius: 12px;
 }
 
-.paket-card h5 {
+.paket-card h3,
+.paket-card h5,
+.paket-card p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   color: #1A5D1A;
   margin-top: 10px;
 }
@@ -170,54 +217,39 @@
   display: inline-block;
   margin-top: 12px;
 }
-.btn-detail {
-  background-color: #1A5D1A;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
+
+.btn-detail:hover {
+  background: #198754;
+  color: #fff;
   text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
 }
+
+/* ================== GALERI ================== */
 .galeri-mini img {
   width: 250px;
-  max-height: 160px; /* ❗️Batasi tinggi */
+  max-height: 160px;
   height: auto;
   border-radius: 12px;
   flex: 0 0 auto;
   scroll-snap-align: start;
-  object-fit: cover; /* ❗️Jaga agar gambar tetap proporsional */
+  object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-nav a.btn-daftar {
-  background: #25d366;
-  color: white !important;
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-weight: bold;
+
+#galeri img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .section {
-    margin: 40px auto;
-    padding: 0 20px;
-  }
+#galeri img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.paket-card h3,
-.paket-card p {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.btn-detail:hover,
-nav a.btn-daftar:hover {
-  background: #198754; /* hijau lebih tua dari bootstrap */
-  color: #fff;
-  text-decoration: none;
-}
 .galeri-card img {
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -226,15 +258,7 @@ nav a.btn-daftar:hover {
 .galeri-card img:hover {
   transform: scale(1.05);
 }
-.paket-scroll-container {
-  display: flex;
-  flex-wrap: nowrap; /* ❗️Ganti dari wrap ke nowrap */
-  overflow-x: auto;   /* ❗️Aktifkan scroll horizontal */
-  gap: 1.5rem;
-  padding: 20px 0;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; /* smooth scroll di iOS */
-}
+
 .galeri-box {
   cursor: pointer;
   position: relative;
@@ -276,57 +300,14 @@ nav a.btn-daftar:hover {
 .galeri-box:hover .galeri-overlay {
   opacity: 1;
 }
+
 .galeri-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
-.paket-scroll-container {
-  display: flex;
-  flex-wrap: nowrap; /* tetap scroll horizontal */
-  overflow-x: auto;
-  gap: 1.5rem;
-  padding: 20px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-.paket-scroll-container::-webkit-scrollbar {
-  height: 8px;
-}
 
-.paket-scroll-container::-webkit-scrollbar-thumb {
-  background: #1A5D1A;
-  border-radius: 10px;
-}
-
-.paket-scroll-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-.paket-card {
-  scroll-snap-align: start;
-  flex: 0 0 auto;
-  width: 260px;
-  /* ... existing styles ... */
-}
-#galeri img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-#galeri img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-#galeri img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-#galeri img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-/* ===== Testimoni Style ===== */
+/* ================== TESTIMONI ================== */
 .testimoni-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -362,18 +343,73 @@ nav a.btn-daftar:hover {
   color: #1A5D1A;
 }
 
-/* ===== Maps Style ===== */
+/* ================== LOGO ROW ================== */
+.logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.logo-row img {
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ================== MAP ================== */
 .map-container {
   margin-top: 2rem;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-/* ===== Navbar Style ===== */
-.navbar, .navbar-brand, .nav-link {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+
+/* ================== RESPONSIVE SECTION ================== */
+@media (max-width: 768px) {
+  .section {
+    margin: 40px auto;
+    padding: 0 20px;
+  }
 }
 
+#bookingStatus {
+  font-weight: bold;
+}
 
+.floating-whatsapp {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: floatPulse 2s ease-in-out infinite;
+  transition: background 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+  background-color: #1ebe5d;
+  text-decoration: none;
+}
+
+.wa-icon {
+  width: 22px;
+  height: 22px;
+}
+
+@keyframes floatPulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
