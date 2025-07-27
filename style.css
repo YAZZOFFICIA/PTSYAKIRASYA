@@ -382,7 +382,7 @@ nav a.btn-daftar:hover {
 
 .floating-whatsapp {
   position: fixed;
-  bottom: 80px;
+  bottom: 40px;
   left: 20px;
   background-color: #25D366;
   color: white;

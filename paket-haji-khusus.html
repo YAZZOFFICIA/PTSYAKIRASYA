@@ -111,7 +111,7 @@ a {
     </ul>
 
     <br>
-    <a href="booking.html" class="btn btn-success">Booking Sekarang</a>
+    <button class="btn btn-success" onclick="handleBooking()">Booking Sekarang</button>
     <a href="https://wa.me/6281234567890?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20Haji%20Khusus%20ONH%20Plus." class="btn-daftar" style="background:#128C7E; margin-left: 10px;">💬 Tanya Admin</a>
   </section>
 
@@ -137,6 +137,18 @@ a {
     function setPaketFromDetail(nama) {
       localStorage.setItem('paketDipilih', nama);
     }
+  function handleBooking() {
+    const isLogin = localStorage.getItem("login");
+
+    if (isLogin === "true") {
+      // Sudah login, arahkan ke halaman booking
+      window.location.href = "booking.html";
+    } else {
+      // Belum login, arahkan ke halaman login
+      alert("Silakan login terlebih dahulu untuk melakukan booking.");
+      window.location.href = "login.html";
+    }
+  }
   </script>
 </body>
 </html>
