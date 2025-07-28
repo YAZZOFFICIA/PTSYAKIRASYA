@@ -215,6 +215,13 @@
       document.getElementById("countdown").innerHTML = "Sudah Berangkat!";
     }
   }, 1000);
+  function logout() {
+    // Hapus status login (misalnya pakai localStorage)
+    localStorage.removeItem("login");
+
+    // Redirect ke halaman login
+    window.location.href = "login.html";
+  }
 </script>
 </body>
 </html>

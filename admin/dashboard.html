@@ -263,6 +263,14 @@
       alert('Anda telah logout.');
       window.location.href = 'login.html';
     }
+    
+  function logout() {
+    // Hapus status login (misalnya pakai localStorage)
+    localStorage.removeItem("login");
+
+    // Redirect ke halaman login
+    window.location.href = "login.html";
+  }
   </script>
 </body>
 </html>
