@@ -13,7 +13,7 @@
     }
     .sidebar {
       height: 100vh;
-      background-color: #02ffb3;
+      background-color: #198754;
       padding: 1rem;
       position: sticky;
       top: 0;
@@ -29,7 +29,7 @@
     }
     .sidebar a:hover,
     .sidebar a.active {
-      background-color:#02ffb3;;
+      background-color: #146c43;
       font-weight: bold;
     }
     .topbar {
@@ -45,6 +45,15 @@
     .table th, .table td {
       vertical-align: middle;
     }
+    .profile-card {
+      padding: 1rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .profile-card h5 {
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -58,6 +67,7 @@
         <a href="#jamaah" class="nav-link" data-bs-toggle="tab">🧑‍🤝‍🧑 Data Jamaah</a>
         <a href="#transaksi" class="nav-link" data-bs-toggle="tab">📄 Riwayat Transaksi</a>
         <a href="#laporan" class="nav-link" data-bs-toggle="tab">📊 Laporan</a>
+        <a href="#profil" class="nav-link" data-bs-toggle="tab">👤 Profil Admin</a>
         <a href="#logout" class="nav-link text-danger mt-auto" onclick="logout()">🚪 Logout</a>
       </nav>
 
@@ -90,6 +100,14 @@
                   <div class="card-body">
                     <h6>Jumlah Pembayaran</h6>
                     <p class="fs-4 fw-semibold text-success">12</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <div class="card-body">
+                    <h6>Total Jamaah Aktif</h6>
+                    <p class="fs-4 fw-semibold text-success">8</p>
                   </div>
                 </div>
               </div>
@@ -205,6 +223,17 @@
             <h5 class="mt-3">📊 Export Laporan</h5>
             <button class="btn btn-outline-success me-2">📥 Export Excel</button>
             <button class="btn btn-outline-danger">📄 Export PDF</button>
+          </div>
+
+          <!-- Profil Admin -->
+          <div class="tab-pane fade" id="profil">
+            <h5 class="mt-3">👤 Profil Admin</h5>
+            <div class="profile-card">
+              <h5>Nama: baraw</h5>
+              <p>Email: bara@syakirasya.co.id</p>
+              <p>Terakhir Login: 27 Juli 2025</p>
+              <button class="btn btn-outline-primary btn-sm">Ubah Password</button>
+            </div>
           </div>
         </div>
       </main>
